@@ -271,6 +271,17 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     mouseY = (e.clientY / window.innerHeight) * 2 - 1;
   });
 
+  /* Push the crystal toward the right side of the canvas on wide screens so
+     it clears the text column instead of rendering behind it. */
+  var baseOffsetX = 0;
+  function updateBaseOffset() {
+    var distance = camera.position.z;
+    var halfHeight = distance * Math.tan(((camera.fov * Math.PI) / 180) / 2);
+    var halfWidth = halfHeight * camera.aspect;
+    var fraction = camera.aspect >= 1.2 ? 0.42 : camera.aspect >= 0.8 ? 0.2 : 0;
+    baseOffsetX = halfWidth * fraction;
+  }
+
   function onResize() {
     var w = heroSection.clientWidth;
     var h = heroSection.clientHeight;
@@ -278,6 +289,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
+    updateBaseOffset();
   }
   window.addEventListener("resize", onResize);
   if ("ResizeObserver" in window) {
@@ -303,8 +315,8 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     wireCrystal.rotation.copy(crystal.rotation);
     wireCrystal.rotation.y += 0.15;
 
-    crystal.position.x = mouseX * 0.3;
-    wireCrystal.position.x = mouseX * 0.3;
+    crystal.position.x = baseOffsetX + mouseX * 0.3;
+    wireCrystal.position.x = baseOffsetX + mouseX * 0.3;
 
     satellites.forEach(function (sat, i) {
       sat.rotation.x = t * (0.3 + i * 0.1);

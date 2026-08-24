@@ -234,6 +234,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -24px -60px -24px -24px;
+  background: radial-gradient(
+    ellipse 100% 100% at 0% 50%,
+    rgba(243, 234, 217, 0.94) 62%,
+    rgba(243, 234, 217, 0) 100%
+  );
+  pointer-events: none;
+}
 .eyebrow {
   display: inline-block;
   color: var(--accent);
