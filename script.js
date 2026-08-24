@@ -316,3 +316,171 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
   animate();
 })();
+
+/* ---------- Chat assistant ---------- */
+(function () {
+  var fab = document.getElementById("chatFab");
+  var panel = document.getElementById("chatPanel");
+  var closeBtn = document.getElementById("chatClose");
+  var messages = document.getElementById("chatMessages");
+  var form = document.getElementById("chatForm");
+  var input = document.getElementById("chatInput");
+  var quick = document.getElementById("chatQuick");
+  if (!fab || !panel || !form || !input || !messages) return;
+
+  var PHONE_DISPLAY = "+971 54 777 1747";
+  var WHATSAPP_LINK =
+    "https://wa.me/971547771747?text=" + encodeURIComponent("Hi Khalifa, I'd like to talk about a website.");
+  var CONTACT_HTML =
+    "Best way to sort that out is to talk directly — message me on " +
+    '<a href="' + WHATSAPP_LINK + '" target="_blank" rel="noopener">WhatsApp</a> or call ' +
+    '<a href="tel:+971547771747">' + PHONE_DISPLAY + "</a>.";
+
+  var knowledge = [
+    {
+      keywords: ["price", "cost", "how much", "package", "pricing", "budget", "fee", "rate"],
+      answer:
+        "There are 4 packages: <strong>Spark</strong> (500 AED, 1-page site), " +
+        "<strong>Pulse</strong> (750 AED, up to 5 pages, most popular), " +
+        "<strong>Nova</strong> (1000 AED, up to 8 pages with advanced animation), and " +
+        '<strong>Genesis</strong> (custom-quoted, fully custom 3D/WebGL builds). See the full breakdown in the ' +
+        '<a href="#pricing">Pricing section</a>.'
+    },
+    {
+      keywords: ["long", "time", "delivery", "deadline", "fast", "days", "when", "duration"],
+      answer:
+        "Spark ships in about 3 days, Pulse in 5–7 days, and Nova in 7–10 days. Genesis projects are scoped " +
+        "individually since they're fully custom, so timeline depends on scope."
+    },
+    {
+      keywords: ["ecommerce", "e-commerce", "store", "shop", "sell", "cart", "checkout"],
+      answer:
+        "Yes — online stores with cart and checkout are part of the <strong>Genesis</strong> custom package, " +
+        'scoped after a quick call. Check <a href="#pricing">Pricing</a> for details.'
+    },
+    {
+      keywords: ["custom", "webgl", "three.js", "threejs", "3d", "app", "dashboard", "genesis"],
+      answer:
+        "Fully custom 3D/WebGL scenes, web apps, and dashboards fall under the <strong>Genesis</strong> package — " +
+        "no fixed price, it's scoped and quoted after a short call about what you need."
+    },
+    {
+      keywords: ["process", "how does it work", "steps", "work with", "start a project"],
+      answer:
+        "It's 4 steps: <strong>Discover</strong> (talk goals & pick a package), <strong>Design</strong> (layout preview), " +
+        "<strong>Animate</strong> (build + motion + testing), <strong>Launch</strong> (site goes live with support after)."
+    },
+    {
+      keywords: ["technology", "tech", "stack", "tools", "gsap", "framework", "built with"],
+      answer:
+        "This site itself is the demo — built with Three.js for the 3D scene, GSAP for scroll animation, and clean " +
+        "hand-written HTML/CSS/JS. Other projects may use React depending on what fits best."
+    },
+    {
+      keywords: ["portfolio", "work", "examples", "projects", "see"],
+      answer: 'You can browse a few recent projects in the <a href="#work">Work section</a> above.'
+    },
+    {
+      keywords: ["revision", "changes", "edit after"],
+      answer:
+        "Spark includes 1 revision round, Pulse includes 2, and Nova includes 2 plus a month of free support after launch."
+    },
+    {
+      keywords: ["hi", "hello", "hey", "salam", "yo"],
+      answer: "Hey! I'm Khalifa's site assistant — ask me about pricing, timelines, or what's included in each package."
+    },
+    {
+      keywords: ["contact", "talk", "call", "whatsapp", "phone", "reach", "hire", "email", "number", "human", "real person"],
+      answer: CONTACT_HTML
+    }
+  ];
+
+  function hasKeyword(q, kw) {
+    var escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    var re = new RegExp("(^|[^a-z0-9])" + escaped + "([^a-z0-9]|$)", "i");
+    return re.test(q);
+  }
+
+  function findAnswer(text) {
+    var q = text.toLowerCase();
+    var best = null;
+    var bestScore = 0;
+    knowledge.forEach(function (entry) {
+      var score = 0;
+      entry.keywords.forEach(function (kw) {
+        if (hasKeyword(q, kw)) score += kw.length;
+      });
+      if (score > bestScore) {
+        bestScore = score;
+        best = entry;
+      }
+    });
+    if (best) return best.answer;
+    return (
+      "I don't have a canned answer for that one — but " + CONTACT_HTML
+    );
+  }
+
+  function addMessage(html, from) {
+    var el = document.createElement("div");
+    el.className = "chat-msg " + from;
+    el.innerHTML = html;
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function escapeHtml(str) {
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  var greeted = false;
+  function openChat() {
+    panel.hidden = false;
+    fab.setAttribute("aria-expanded", "true");
+    if (!greeted) {
+      greeted = true;
+      addMessage(
+        "Hi, I'm Khalifa's assistant. Ask me anything about building a website — pricing, timelines, what's included — " +
+          "or use a quick question below.",
+        "bot"
+      );
+    }
+    input.focus();
+  }
+  function closeChat() {
+    panel.hidden = true;
+    fab.setAttribute("aria-expanded", "false");
+  }
+
+  fab.addEventListener("click", function () {
+    if (panel.hidden) openChat();
+    else closeChat();
+  });
+  if (closeBtn) closeBtn.addEventListener("click", closeChat);
+
+  function ask(text) {
+    text = text.trim();
+    if (!text) return;
+    addMessage(escapeHtml(text), "user");
+    var reply = findAnswer(text);
+    setTimeout(function () {
+      addMessage(reply, "bot");
+    }, 350);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    ask(input.value);
+    input.value = "";
+  });
+
+  if (quick) {
+    quick.querySelectorAll("button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        ask(btn.textContent);
+      });
+    });
+  }
+})();
