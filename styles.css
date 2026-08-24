@@ -443,6 +443,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 /* Work */
 .work-grid { grid-template-columns: repeat(3, 1fr); }
 .work-card {
+  display: block;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -477,12 +478,34 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
   border-radius: 999px;
   font-family: var(--font-display);
 }
-.thumb-1 { background: linear-gradient(135deg, #ffb37b, #ff5b34); }
-.thumb-2 { background: linear-gradient(135deg, #6c4bff, #b79bff); }
-.thumb-3 { background: linear-gradient(135deg, #c9a15a, #efe0c9); }
-.thumb-4 { background: linear-gradient(135deg, #34d9c1, #6c4bff); }
-.thumb-5 { background: linear-gradient(135deg, #ff8fa3, #ffd39a); }
-.thumb-6 { background: linear-gradient(135deg, #241f18, #6c4bff); }
+.thumb-meridian {
+  background: linear-gradient(155deg, #0f2340, #0a1830);
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.thumb-vantage {
+  background: linear-gradient(155deg, #2c2a26, #0e0e10);
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.thumb-pulse {
+  background: linear-gradient(135deg, #ff2e88, #3d6bff);
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.demo-brand {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+.demo-brand em { font-style: normal; opacity: 0.7; }
 .work-body { padding: 22px; }
 .work-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
 .work-tags span {
@@ -495,6 +518,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 }
 .work-body h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .work-body p { color: var(--ink-dim); font-size: 0.9rem; }
+.work-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.work-card:hover .work-link { text-decoration: underline; }
 
 /* Pricing */
 .pricing-grid { grid-template-columns: repeat(4, 1fr); align-items: stretch; }

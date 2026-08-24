@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Vantage — Architecture (Demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+
+<a class="demo-tag" href="../../index.html#work">← Back to Khalifa's portfolio · demo project</a>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">STUDIO <span>VANTAGE</span></a>
+    <nav class="nav">
+      <a href="#work" data-hover>Work</a>
+      <a href="#philosophy" data-hover>Philosophy</a>
+      <a href="#process" data-hover>Process</a>
+      <a href="#contact" data-hover>Contact</a>
+    </nav>
+    <a href="#contact" class="btn" data-hover>Start a Project</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="container hero-inner">
+      <p class="mono-label" data-reveal>ARCHITECTURE &amp; SPATIAL DESIGN — EST. 2014</p>
+      <h1 class="hero-title">
+        <span class="line" data-reveal>WE DESIGN</span>
+        <span class="line" data-reveal>SPACE THAT</span>
+        <span class="line accent" data-reveal>MOVES YOU.</span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        Studio Vantage is a design studio working across residential, cultural,
+        and commercial architecture — this page is a demo built to show
+        3D-driven transitions in a real interface.
+      </p>
+    </div>
+    <div class="scroll-cue" data-reveal><span>SCROLL</span></div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head" data-reveal-3d>
+        <p class="mono-label">SELECTED WORK</p>
+        <h2>Four projects, flipped open</h2>
+        <p class="section-sub">Hover a project to see the brief on the reverse.</p>
+      </div>
+      <div class="grid project-grid">
+        <div class="flip-card" data-reveal-3d>
+          <div class="flip-inner">
+            <div class="flip-face flip-front pf-1">
+              <span class="proj-num">01</span>
+              <h3>Kestrel House</h3>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="proj-num">01</span>
+              <h3>Kestrel House</h3>
+              <p>A cantilevered residence built around a single skylight axis. Riverside, private commission.</p>
+              <span class="proj-tag">Residential</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" data-reveal-3d>
+          <div class="flip-inner">
+            <div class="flip-face flip-front pf-2">
+              <span class="proj-num">02</span>
+              <h3>Anthem Pavilion</h3>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="proj-num">02</span>
+              <h3>Anthem Pavilion</h3>
+              <p>A temporary cultural pavilion using a modular timber lattice, rebuilt three times since 2019.</p>
+              <span class="proj-tag">Cultural</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" data-reveal-3d>
+          <div class="flip-inner">
+            <div class="flip-face flip-front pf-3">
+              <span class="proj-num">03</span>
+              <h3>Marrow Offices</h3>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="proj-num">03</span>
+              <h3>Marrow Offices</h3>
+              <p>A workplace retrofit built around daylight modeling and a central atrium void.</p>
+              <span class="proj-tag">Commercial</span>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" data-reveal-3d>
+          <div class="flip-inner">
+            <div class="flip-face flip-front pf-4">
+              <span class="proj-num">04</span>
+              <h3>Solace Baths</h3>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="proj-num">04</span>
+              <h3>Solace Baths</h3>
+              <p>A public bathhouse organized around thermal zoning and a stepped concrete roofline.</p>
+              <span class="proj-tag">Public</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="philosophy">
+    <div class="container philosophy-grid">
+      <div class="philosophy-visual" data-reveal-3d>
+        <div class="depth-layer layer-back"></div>
+        <div class="depth-layer layer-mid"></div>
+        <div class="depth-layer layer-front"></div>
+      </div>
+      <div data-reveal-3d>
+        <p class="mono-label">PHILOSOPHY</p>
+        <h2>Buildings should respond, not just sit</h2>
+        <p class="section-sub">
+          Every brief starts with light, wind, and how people actually move through
+          a space — not the elevation drawing. We model in three dimensions from
+          day one so nothing is left to guesswork.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head" data-reveal-3d>
+        <p class="mono-label">PROCESS</p>
+        <h2>From site to structure</h2>
+      </div>
+      <div class="grid process-grid">
+        <div class="process-step" data-reveal-3d><span class="proj-num">01</span><h3>Site &amp; Brief</h3><p>Survey, constraints, and a conversation about how the space should feel.</p></div>
+        <div class="process-step" data-reveal-3d><span class="proj-num">02</span><h3>Massing</h3><p>3D volume studies tested against light and sightlines.</p></div>
+        <div class="process-step" data-reveal-3d><span class="proj-num">03</span><h3>Detail</h3><p>Materials, structure, and construction documentation.</p></div>
+        <div class="process-step" data-reveal-3d><span class="proj-num">04</span><h3>Build</h3><p>On-site delivery with the original design team throughout.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" id="contact">
+    <div class="container" data-reveal-3d>
+      <h2>Have a site in mind?</h2>
+      <a href="#top" class="btn btn-light" data-hover>Start a Project</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Studio Vantage. Fictional studio — design demo by Khalifa.</span>
+    <a href="../../index.html#work">Back to portfolio →</a>
+  </div>
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script type="module" src="script.js?v=1"></script>
+</body>
+</html>
