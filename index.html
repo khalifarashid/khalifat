@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalifa — 3D Creative Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">K</span>
+      <span>Khalifa</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#about" data-hover>About</a>
+      <a href="#services" data-hover>Services</a>
+      <a href="#work" data-hover>Work</a>
+      <a href="#pricing" data-hover>Pricing</a>
+      <a href="#contact" data-hover>Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-primary btn-sm" data-hover>Start a Project</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow" data-reveal-hero>Khalifa — 3D Creative Developer</p>
+      <h1 data-reveal-hero>
+        <span>Websites that move,</span>
+        <span class="hl">glow, and leave an impression.</span>
+      </h1>
+      <p class="hero-sub" data-reveal-hero>
+        I design and build interactive 3D websites and animations — from sharp
+        landing pages to fully custom WebGL experiences. This site is the demo.
+      </p>
+      <div class="hero-cta" data-reveal-hero>
+        <a href="#pricing" class="btn btn-primary" data-hover>View Packages</a>
+        <a href="#work" class="btn btn-ghost" data-hover>See My Work</a>
+      </div>
+      <div class="hero-stats" data-reveal-hero>
+        <div class="stat">
+          <strong>30+</strong>
+          <span>Projects shipped</span>
+        </div>
+        <div class="stat">
+          <strong>3D</strong>
+          <span>Native, built from scratch</span>
+        </div>
+        <div class="stat">
+          <strong>24h</strong>
+          <span>Avg. reply time</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>CREATIVE CODE</span><span class="dot">•</span>
+      <span>3D EXPERIENCES</span><span class="dot">•</span>
+      <span>MOTION DESIGN</span><span class="dot">•</span>
+      <span>WEBGL</span><span class="dot">•</span>
+      <span>INTERACTIVE UI</span><span class="dot">•</span>
+      <span>CREATIVE CODE</span><span class="dot">•</span>
+      <span>3D EXPERIENCES</span><span class="dot">•</span>
+      <span>MOTION DESIGN</span><span class="dot">•</span>
+      <span>WEBGL</span><span class="dot">•</span>
+      <span>INTERACTIVE UI</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-visual" data-reveal>
+        <div class="orb-wrap">
+          <div class="orb"></div>
+          <div class="orb-ring"></div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="tag" data-reveal>About</p>
+        <h2 data-reveal>Hi, I'm Khalifa.</h2>
+        <p class="lead" data-reveal>
+          A creative web developer who blends design, motion, and code.
+          I turn static ideas into interactive 3D experiences that make
+          brands genuinely memorable online.
+        </p>
+        <div class="skill-pills" data-reveal>
+          <span>Three.js</span>
+          <span>WebGL</span>
+          <span>GSAP</span>
+          <span>React</span>
+          <span>UI/UX Design</span>
+          <span>Motion Design</span>
+          <span>Creative Coding</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="tag">What I Do</p>
+        <h2>Built to move, made to convert</h2>
+      </div>
+      <div class="grid services-grid">
+        <div class="tilt-card card" data-reveal>
+          <div class="icon-box">◆</div>
+          <h3>3D Websites</h3>
+          <p>Immersive WebGL scenes built to represent your brand in three dimensions.</p>
+        </div>
+        <div class="tilt-card card" data-reveal>
+          <div class="icon-box">✦</div>
+          <h3>Motion &amp; Animation</h3>
+          <p>Scroll-triggered and micro-interaction animation that brings pages to life.</p>
+        </div>
+        <div class="tilt-card card" data-reveal>
+          <div class="icon-box">▲</div>
+          <h3>Web Development</h3>
+          <p>Fast, responsive, clean-coded websites built to scale with your business.</p>
+        </div>
+        <div class="tilt-card card" data-reveal>
+          <div class="icon-box">●</div>
+          <h3>Brand Experience</h3>
+          <p>Cohesive visual direction so every page feels unmistakably yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="tag">Portfolio</p>
+        <h2>A few recent projects</h2>
+        <p class="section-sub">Placeholder projects showing the range — swap in your real case studies anytime.</p>
+      </div>
+      <div class="grid work-grid">
+        <article class="tilt-card work-card" data-reveal>
+          <div class="work-thumb thumb-1"><span class="work-thumb-tag">3D</span></div>
+          <div class="work-body">
+            <div class="work-tags"><span>3D Product</span><span>WebGL</span></div>
+            <h3>Orbit — 3D Product Launch</h3>
+            <p>An interactive product reveal with a rotating 3D hero model.</p>
+          </div>
+        </article>
+        <article class="tilt-card work-card" data-reveal>
+          <div class="work-thumb thumb-2"><span class="work-thumb-tag">Agency</span></div>
+          <div class="work-body">
+            <div class="work-tags"><span>Agency</span><span>Animation</span></div>
+            <h3>Lumen — Interactive Agency Site</h3>
+            <p>A bold, animation-driven site with scroll-triggered storytelling.</p>
+          </div>
+        </article>
+        <article class="tilt-card work-card" data-reveal>
+          <div class="work-thumb thumb-3"><span class="work-thumb-tag">Travel</span></div>
+          <div class="work-body">
+            <div class="work-tags"><span>Travel</span><span>Immersive</span></div>
+            <h3>Nomad — Travel Experience</h3>
+            <p>A parallax-rich journey through destinations, built to explore.</p>
+          </div>
+        </article>
+        <article class="tilt-card work-card" data-reveal>
+          <div class="work-thumb thumb-4"><span class="work-thumb-tag">SaaS</span></div>
+          <div class="work-body">
+            <div class="work-tags"><span>SaaS</span><span>Landing Page</span></div>
+            <h3>Pulse — SaaS Landing Page</h3>
+            <p>A conversion-focused landing page with animated product previews.</p>
+          </div>
+        </article>
+        <article class="tilt-card work-card" data-reveal>
+          <div class="work-thumb thumb-5"><span class="work-thumb-tag">Fashion</span></div>
+          <div class="work-body">
+            <div class="work-tags"><span>Fashion</span><span>Portfolio</span></div>
+            <h3>Aura — Fashion Portfolio</h3>
+            <p>A visual-first portfolio with fluid transitions between looks.</p>
+          </div>
+        </article>
+        <article class="tilt-card work-card" data-reveal>
+          <div class="work-thumb thumb-6"><span class="work-thumb-tag">Event</span></div>
+          <div class="work-body">
+            <div class="work-tags"><span>Event</span><span>Microsite</span></div>
+            <h3>Nova — Event Microsite</h3>
+            <p>A countdown-driven microsite with a glowing 3D centerpiece.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="tag">Pricing</p>
+        <h2>Simple packages, no surprises</h2>
+        <p class="section-sub">Pick a ready-made package or go fully custom.</p>
+      </div>
+
+      <div class="grid pricing-grid">
+
+        <div class="tilt-card price-card" data-reveal>
+          <div class="price-card-head">
+            <h3>Spark</h3>
+            <p>A sharp, single-page site that makes a strong first impression.</p>
+          </div>
+          <div class="price">
+            <span class="amount">500</span>
+            <span class="currency">AED</span>
+          </div>
+          <ul class="price-features">
+            <li>1-page responsive website</li>
+            <li>Smooth scroll animations</li>
+            <li>Contact section</li>
+            <li>3-day delivery</li>
+            <li>1 revision round</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" data-hover>Choose Spark</a>
+        </div>
+
+        <div class="tilt-card price-card featured" data-reveal>
+          <div class="badge">Most Popular</div>
+          <div class="price-card-head">
+            <h3>Pulse</h3>
+            <p>A multi-page site with custom motion for growing brands.</p>
+          </div>
+          <div class="price">
+            <span class="amount">750</span>
+            <span class="currency">AED</span>
+          </div>
+          <ul class="price-features">
+            <li>Up to 5 pages</li>
+            <li>Custom animations &amp; micro-interactions</li>
+            <li>Contact form</li>
+            <li>Basic SEO setup</li>
+            <li>5–7 day delivery</li>
+            <li>2 revision rounds</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" data-hover>Choose Pulse</a>
+        </div>
+
+        <div class="tilt-card price-card" data-reveal>
+          <div class="price-card-head">
+            <h3>Nova</h3>
+            <p>A complete site with advanced 3D and animation touches.</p>
+          </div>
+          <div class="price">
+            <span class="amount">1000</span>
+            <span class="currency">AED</span>
+          </div>
+          <ul class="price-features">
+            <li>Up to 8 pages</li>
+            <li>Advanced GSAP / 3D elements</li>
+            <li>Performance optimization</li>
+            <li>Advanced SEO setup</li>
+            <li>7–10 day delivery</li>
+            <li>1 month free support</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" data-hover>Choose Nova</a>
+        </div>
+
+        <div class="tilt-card price-card custom" data-reveal>
+          <div class="price-card-head">
+            <h3>Genesis</h3>
+            <p>Fully custom 3D / WebGL builds for projects with big ambitions.</p>
+          </div>
+          <div class="price">
+            <span class="amount amount-custom">Let's talk</span>
+          </div>
+          <ul class="price-features">
+            <li>Custom Three.js / WebGL scenes</li>
+            <li>Web apps &amp; dashboards</li>
+            <li>E-commerce with custom features</li>
+            <li>Scoped &amp; quoted after a call</li>
+            <li>Flexible timeline</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" data-hover>Request a Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="tag">How It Works</p>
+        <h2>From idea to live website</h2>
+      </div>
+      <div class="grid process-grid">
+        <div class="process-step" data-reveal>
+          <div class="step-num">01</div>
+          <h3>Discover</h3>
+          <p>We talk about your goals, style, and the package that fits.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <div class="step-num">02</div>
+          <h3>Design</h3>
+          <p>I design the layout and share a preview for your feedback.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <div class="step-num">03</div>
+          <h3>Animate</h3>
+          <p>The site is built, animated, tested, and made fully responsive.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <div class="step-num">04</div>
+          <h3>Launch</h3>
+          <p>Your site goes live, with support waiting after launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="contact-box" data-reveal>
+        <div class="contact-text">
+          <p class="tag">Contact</p>
+          <h2>Let's build something that moves.</h2>
+          <p class="section-sub">Tell me about your project and I'll get back to you within 24 hours.</p>
+          <div class="contact-info">
+            <a href="mailto:ad.khalifa.khs@gmail.com" data-hover>✉ ad.khalifa.khs@gmail.com</a>
+            <a href="tel:+971547771747" dir="ltr" data-hover>📱 +971 54 777 1747</a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnpakqyd" method="POST">
+          <div class="form-row">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+          </div>
+          <label>
+            <span>Package</span>
+            <select name="package">
+              <option value="spark">Spark — 500 AED</option>
+              <option value="pulse">Pulse — 750 AED</option>
+              <option value="nova">Nova — 1000 AED</option>
+              <option value="genesis">Genesis — let's talk</option>
+            </select>
+          </label>
+          <label>
+            <span>Project details</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="New project inquiry — Khalifa portfolio">
+          <button type="submit" class="btn btn-primary btn-full" data-hover>Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Khalifa. Crafted with Three.js &amp; GSAP.</p>
+  </div>
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script type="module" src="script.js"></script>
+</body>
+</html>
