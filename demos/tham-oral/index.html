@@ -13,6 +13,7 @@
 
 <style>
   :root{
+    color-scheme: light;
     --cream:#F6F3EC;
     --paper:#FBF9F4;
     --plaster:#EAE2D2;
@@ -29,24 +30,9 @@
     --glass-bg:rgba(251,249,244,0.62);
     --glass-line:rgba(255,255,255,0.5);
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --cream:#181510; --paper:#201B14; --plaster:#241F17;
-      --ink:#EDE6D8; --ink-soft:#C6B99F; --brown:#C9B9A0;
-      --sage:#93AE89; --sage-deep:#B7CBAE; --sage-tint:#2B3527;
-      --wine:#D98C9A; --wine-tint:#3A2229; --line:#3A3225;
-      --shadow:26px 34px -22px rgba(0,0,0,0.55);
-      --glass-bg:rgba(32,27,20,0.55); --glass-line:rgba(255,255,255,0.08);
-    }
-  }
-  :root[data-theme="dark"]{
-    --cream:#181510; --paper:#201B14; --plaster:#241F17;
-    --ink:#EDE6D8; --ink-soft:#C6B99F; --brown:#C9B9A0;
-    --sage:#93AE89; --sage-deep:#B7CBAE; --sage-tint:#2B3527;
-    --wine:#D98C9A; --wine-tint:#3A2229; --line:#3A3225;
-    --shadow:26px 34px -22px rgba(0,0,0,0.55);
-    --glass-bg:rgba(32,27,20,0.55); --glass-line:rgba(255,255,255,0.08);
-  }
+  /* Colors are locked to Tham's real brand palette on every device —
+     intentionally not following system dark mode, so the demo looks
+     identical whoever opens it. */
 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
