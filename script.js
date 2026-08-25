@@ -212,7 +212,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
   if (!form || !formNote) return;
 
-  var DEST_EMAIL = "ad.khalifa.khs@gmail.com";
+  var DEST_EMAIL = "createwithkhali@gmail.com";
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
