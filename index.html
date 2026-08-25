@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
-<body>
+<body id="top">
 
 <div class="grain" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
@@ -17,66 +17,90 @@
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
-<header class="site-header" id="top">
-  <div class="container header-inner">
-    <a href="#top" class="logo">
-      <span class="logo-mark">K</span>
-      <span>Khalifa</span>
-    </a>
-
-    <nav class="nav" id="nav">
-      <a href="#about" data-hover>About</a>
-      <a href="#services" data-hover>Services</a>
-      <a href="#work" data-hover>Work</a>
-      <a href="#pricing" data-hover>Pricing</a>
-      <a href="#contact" data-hover>Contact</a>
-    </nav>
-
-    <div class="header-actions">
-      <a href="#contact" class="btn btn-primary btn-sm" data-hover>Start a Project</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+<!-- SPLASH INTRO -->
+<div class="lp-splash" id="lpSplash">
+  <div class="lp-splash-row lp-splash-row-top">
+    <div class="lp-splash-box"></div><div class="lp-splash-box"></div><div class="lp-splash-box"></div><div class="lp-splash-box"></div><div class="lp-splash-box"></div>
   </div>
-</header>
+  <div class="lp-splash-row lp-splash-row-bottom">
+    <div class="lp-splash-box"></div><div class="lp-splash-box"></div><div class="lp-splash-box"></div><div class="lp-splash-box"></div><div class="lp-splash-box"></div>
+  </div>
+</div>
+
+<!-- LOGO -->
+<div class="lp-logo-wrapper">
+  <div class="inner">
+    <a href="#top" class="lp-logo" aria-label="Home" data-hover>K</a>
+  </div>
+</div>
+
+<!-- BURGER -->
+<div class="lp-burger-wrapper">
+  <div class="inner">
+    <button class="lp-burger-btn" id="lpBurgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</div>
+
+<!-- MENU PANEL -->
+<div class="lp-menu-panel" id="lpMenuPanel">
+  <nav>
+    <a href="#about" data-hover>About</a>
+    <a href="#services" data-hover>Services</a>
+    <a href="#work" data-hover>Work</a>
+    <a href="#pricing" data-hover>Pricing</a>
+    <a href="#contact" data-hover>Contact</a>
+  </nav>
+  <div class="lp-menu-contact">
+    <a href="mailto:ad.khalifa.khs@gmail.com" class="lp-menu-email" data-hover>ad.khalifa.khs@gmail.com</a>
+    <a href="tel:+971547771747" dir="ltr" class="lp-menu-email" data-hover>+971 54 777 1747</a>
+  </div>
+  <div class="lp-menu-cta-wrap">
+    <a href="#contact" class="lp-menu-cta-btn" data-hover>
+      <span class="lp-menu-cta-bg"></span>
+      <span class="lp-menu-cta-text">Start a Project</span>
+      <span class="lp-menu-cta-circle">
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
 
 <main>
 
   <!-- HERO -->
-  <section class="hero">
-    <canvas id="heroCanvas" class="hero-canvas"></canvas>
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <p class="eyebrow" data-reveal-hero>Khalifa — 3D Creative Developer</p>
-      <h1 data-reveal-hero>
-        <span>Websites that move,</span>
-        <span class="hl">glow, and leave an impression.</span>
-      </h1>
-      <p class="hero-sub" data-reveal-hero>
-        I design and build interactive 3D websites and animations — from sharp
-        landing pages to fully custom WebGL experiences. This site is the demo.
-      </p>
-      <div class="hero-cta" data-reveal-hero>
-        <a href="#pricing" class="btn btn-primary" data-hover>View Packages</a>
-        <a href="#work" class="btn btn-ghost" data-hover>See My Work</a>
-      </div>
-      <div class="hero-stats" data-reveal-hero>
-        <div class="stat">
-          <strong>30+</strong>
-          <span>Projects shipped</span>
-        </div>
-        <div class="stat">
-          <strong>3D</strong>
-          <span>Native, built from scratch</span>
-        </div>
-        <div class="stat">
-          <strong>24h</strong>
-          <span>Avg. reply time</span>
-        </div>
+  <section class="lp-hero">
+    <div class="lp-hero-big-text lp-creator-text-animate">
+      <h2>Websites</h2>
+    </div>
+
+    <div class="lp-hero-base-img lp-hero-image-animate"
+         style="background-image:url('https://soft-zoom-63098134.figma.site/_assets/v11/5c9f982199fde1d9b85a20e5396f0fa7bacaf9a3.png?w=2560');">
+    </div>
+
+    <canvas id="lpRevealCanvas" class="lp-reveal-canvas"></canvas>
+    <div class="lp-hero-reveal-img" id="lpRevealImg"
+         style="background-image:url('https://soft-zoom-63098134.figma.site/_assets/v11/6be2165e31648955b4e071f4cf2a50bc572b9bfd.png?w=1536');">
+    </div>
+
+    <div class="lp-hero-content">
+      <div class="lp-hero-content-inner">
+        <h1 class="lp-hero-headline" id="lpHeadline"></h1>
+        <a href="#contact" class="lp-cta-btn lp-cta-animate" data-hover>
+          <span class="lp-cta-btn-bg"></span>
+          <span class="lp-cta-btn-text">Start a Project</span>
+          <span class="lp-cta-btn-circle">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 13L13 5M13 5H6M13 5V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
-    <div class="scroll-cue" aria-hidden="true"><span></span></div>
   </section>
 
   <!-- MARQUEE -->
@@ -168,13 +192,13 @@
       <div class="grid work-grid">
         <a class="tilt-card work-card demo-meridian" href="demos/meridian-cole/" target="_blank" rel="noopener" data-reveal data-hover>
           <div class="work-thumb thumb-meridian">
-            <span class="work-thumb-tag">Professional</span>
-            <span class="demo-brand">Meridian <em>&amp;</em> Cole</span>
+            <span class="work-thumb-tag">Cinematic Scroll</span>
+            <span class="demo-brand">Mostar <em>City</em></span>
           </div>
           <div class="work-body">
-            <div class="work-tags"><span>Corporate</span><span>Restrained Motion</span></div>
-            <h3>Meridian &amp; Cole — Law Firm</h3>
-            <p>A confident, minimal site for a professional-services firm — navy, brass, and serif type.</p>
+            <div class="work-tags"><span>Travel</span><span>Scroll-Driven</span></div>
+            <h3>Mostar — Cinematic Scroll Story</h3>
+            <p>A three-act scroll experience through Bosnia's Old Bridge and bazaar, with parallax depth and a morphing hero image.</p>
             <span class="work-link">View live demo ↗</span>
           </div>
         </a>
@@ -431,15 +455,8 @@
   </div>
 </div>
 
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-  }
-}
-</script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script type="module" src="script.js?v=3"></script>
+<script type="module" src="script.js?v=4"></script>
 </body>
 </html>

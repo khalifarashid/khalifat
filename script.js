@@ -1,24 +1,99 @@
-import * as THREE from "three";
-
 /* ---------- Year ---------- */
 var yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* ---------- Mobile menu ---------- */
+/* ---------- Burger menu ---------- */
 (function () {
-  var menuToggle = document.getElementById("menuToggle");
-  var header = document.querySelector(".site-header");
-  if (!menuToggle || !header) return;
-  menuToggle.addEventListener("click", function () {
-    var isOpen = header.classList.toggle("nav-open");
-    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  var burgerBtn = document.getElementById("lpBurgerBtn");
+  var menuPanel = document.getElementById("lpMenuPanel");
+  if (!burgerBtn || !menuPanel) return;
+
+  function closeMenu() {
+    burgerBtn.classList.remove("open");
+    menuPanel.classList.remove("open");
+    burgerBtn.setAttribute("aria-label", "Open menu");
+    burgerBtn.setAttribute("aria-expanded", "false");
+  }
+
+  burgerBtn.addEventListener("click", function () {
+    var isOpen = menuPanel.classList.toggle("open");
+    burgerBtn.classList.toggle("open", isOpen);
+    burgerBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    burgerBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
-  document.querySelectorAll(".nav a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      header.classList.remove("nav-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
+
+  menuPanel.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", closeMenu);
   });
+})();
+
+/* ---------- Hero headline word reveal ---------- */
+(function () {
+  var headline = document.getElementById("lpHeadline");
+  if (!headline) return;
+  var text = "I design and build fast, animated websites that make your brand impossible to ignore.";
+  text.split(" ").forEach(function (word, i) {
+    var span = document.createElement("span");
+    span.className = "lp-word-reveal";
+    span.textContent = word;
+    span.style.animationDelay = (1 + i * 0.05) + "s";
+    headline.appendChild(span);
+  });
+})();
+
+/* ---------- Hero spotlight image reveal ---------- */
+(function () {
+  var canvas = document.getElementById("lpRevealCanvas");
+  var imgLayer = document.getElementById("lpRevealImg");
+  if (!canvas || !imgLayer) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var ctx = canvas.getContext("2d");
+  var SPOTLIGHT_R = 260;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  var mouse = { x: -999, y: -999 };
+  var smooth = { x: -999, y: -999 };
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  function loop() {
+    smooth.x += (mouse.x - smooth.x) * 0.1;
+    smooth.y += (mouse.y - smooth.y) * 0.1;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    var grad = ctx.createRadialGradient(smooth.x, smooth.y, 0, smooth.x, smooth.y, SPOTLIGHT_R);
+    grad.addColorStop(0, "rgba(255,255,255,1)");
+    grad.addColorStop(0.4, "rgba(255,255,255,1)");
+    grad.addColorStop(0.6, "rgba(255,255,255,0.75)");
+    grad.addColorStop(0.75, "rgba(255,255,255,0.4)");
+    grad.addColorStop(0.88, "rgba(255,255,255,0.12)");
+    grad.addColorStop(1, "rgba(255,255,255,0)");
+
+    ctx.beginPath();
+    ctx.arc(smooth.x, smooth.y, SPOTLIGHT_R, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    var dataUrl = canvas.toDataURL();
+    imgLayer.style.webkitMaskImage = "url(" + dataUrl + ")";
+    imgLayer.style.maskImage = "url(" + dataUrl + ")";
+    imgLayer.style.webkitMaskSize = "100% 100%";
+    imgLayer.style.maskSize = "100% 100%";
+
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
 })();
 
 /* ---------- Scroll progress bar ---------- */
@@ -91,19 +166,9 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 /* ---------- Scroll reveal ---------- */
 (function () {
   var targets = document.querySelectorAll("[data-reveal]");
-  var heroTargets = document.querySelectorAll("[data-reveal-hero]");
 
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(heroTargets, {
-      opacity: 0,
-      y: 26,
-      duration: 0.9,
-      stagger: 0.12,
-      ease: "power2.out",
-      delay: 0.15
-    });
 
     targets.forEach(function (el) {
       gsap.from(el, {
@@ -119,7 +184,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
   } else {
     // Fallback: plain IntersectionObserver reveal
-    var all = Array.prototype.slice.call(targets).concat(Array.prototype.slice.call(heroTargets));
+    var all = Array.prototype.slice.call(targets);
     all.forEach(function (el) { el.classList.add("reveal-init"); });
     if ("IntersectionObserver" in window) {
       var io = new IntersectionObserver(
@@ -183,150 +248,6 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
         }
       });
   });
-})();
-
-/* ---------- Three.js hero scene ---------- */
-(function () {
-  var canvas = document.getElementById("heroCanvas");
-  var heroSection = document.querySelector(".hero");
-  if (!canvas || !heroSection || !THREE) return;
-
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  var scene = new THREE.Scene();
-
-  var camera = new THREE.PerspectiveCamera(
-    45,
-    heroSection.clientWidth / heroSection.clientHeight,
-    0.1,
-    100
-  );
-  camera.position.set(0, 0, 7);
-
-  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(heroSection.clientWidth, heroSection.clientHeight);
-
-  /* Lights: warm beige base + coral/violet accent rim lights */
-  scene.add(new THREE.AmbientLight(0xf3ead9, 0.9));
-
-  var keyLight = new THREE.DirectionalLight(0xffb37b, 1.1);
-  keyLight.position.set(4, 4, 5);
-  scene.add(keyLight);
-
-  var rimLight = new THREE.PointLight(0x6c4bff, 6, 20);
-  rimLight.position.set(-4, -2, 3);
-  scene.add(rimLight);
-
-  var rimLight2 = new THREE.PointLight(0xff5b34, 4, 20);
-  rimLight2.position.set(3, -3, -2);
-  scene.add(rimLight2);
-
-  /* Main faceted crystal */
-  var geometry = new THREE.IcosahedronGeometry(1.7, 1);
-  var material = new THREE.MeshStandardMaterial({
-    color: 0xefe0c9,
-    flatShading: true,
-    metalness: 0.55,
-    roughness: 0.3
-  });
-  var crystal = new THREE.Mesh(geometry, material);
-  scene.add(crystal);
-
-  var wireGeometry = new THREE.IcosahedronGeometry(1.86, 1);
-  var wireMaterial = new THREE.MeshBasicMaterial({
-    color: 0xff5b34,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.35
-  });
-  var wireCrystal = new THREE.Mesh(wireGeometry, wireMaterial);
-  scene.add(wireCrystal);
-
-  /* Small floating satellites */
-  var satellites = [];
-  var satColors = [0x6c4bff, 0xc9a15a, 0xff5b34];
-  var satPositions = [
-    [-3.2, 1.4, -1.5],
-    [3.4, -1.2, -1.2],
-    [-2.6, -2, -2.4]
-  ];
-  satPositions.forEach(function (pos, i) {
-    var g = new THREE.IcosahedronGeometry(0.28 + i * 0.05, 0);
-    var m = new THREE.MeshStandardMaterial({
-      color: satColors[i],
-      flatShading: true,
-      metalness: 0.4,
-      roughness: 0.4
-    });
-    var mesh = new THREE.Mesh(g, m);
-    mesh.position.set(pos[0], pos[1], pos[2]);
-    scene.add(mesh);
-    satellites.push(mesh);
-  });
-
-  var mouseX = 0, mouseY = 0;
-  window.addEventListener("mousemove", function (e) {
-    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-    mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-  });
-
-  /* Push the crystal toward the right side of the canvas on wide screens so
-     it clears the text column instead of rendering behind it. */
-  var baseOffsetX = 0;
-  function updateBaseOffset() {
-    var distance = camera.position.z;
-    var halfHeight = distance * Math.tan(((camera.fov * Math.PI) / 180) / 2);
-    var halfWidth = halfHeight * camera.aspect;
-    var fraction = camera.aspect >= 1.2 ? 0.42 : camera.aspect >= 0.8 ? 0.2 : 0;
-    baseOffsetX = halfWidth * fraction;
-  }
-
-  function onResize() {
-    var w = heroSection.clientWidth;
-    var h = heroSection.clientHeight;
-    if (!w || !h) return;
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-    updateBaseOffset();
-  }
-  window.addEventListener("resize", onResize);
-  if ("ResizeObserver" in window) {
-    new ResizeObserver(onResize).observe(heroSection);
-  }
-
-  var clock = new THREE.Clock();
-  var visible = true;
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      visible = entries[0].isIntersecting;
-    }).observe(heroSection);
-  }
-
-  function animate() {
-    requestAnimationFrame(animate);
-    if (!visible) return;
-    var t = clock.getElapsedTime();
-    var spin = reduceMotion ? 0.05 : 1;
-
-    crystal.rotation.y = t * 0.22 * spin;
-    crystal.rotation.x = Math.sin(t * 0.3) * 0.15 * spin + mouseY * 0.25;
-    wireCrystal.rotation.copy(crystal.rotation);
-    wireCrystal.rotation.y += 0.15;
-
-    crystal.position.x = baseOffsetX + mouseX * 0.3;
-    wireCrystal.position.x = baseOffsetX + mouseX * 0.3;
-
-    satellites.forEach(function (sat, i) {
-      sat.rotation.x = t * (0.3 + i * 0.1);
-      sat.rotation.y = t * (0.4 + i * 0.08);
-      sat.position.y += Math.sin(t * 0.6 + i) * 0.0025;
-    });
-
-    renderer.render(scene, camera);
-  }
-  animate();
 })();
 
 /* ---------- Chat assistant ---------- */
