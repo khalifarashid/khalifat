@@ -819,6 +819,10 @@ h1, h2, h3 { font-weight: 400; letter-spacing: -0.025em; line-height: 1.12; }
   /* The wordmark renders ~3.61x its font-size wide, so 20vw keeps it
      at ~72% of the viewport at every width, phones included. */
   font-size: clamp(64px, 20vw, 340px);
+  /* A line box shorter than the glyphs let the descender of the "y"
+     spill past the hero's bottom edge, where overflow:hidden cut it
+     in half. Give the line box room for the full glyph. */
+  line-height: 1.15;
 }
 .lp-hero-big-text { padding: 0 16px; }
 
