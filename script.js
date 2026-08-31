@@ -31,7 +31,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 (function () {
   var headline = document.getElementById("lpHeadline");
   if (!headline) return;
-  var text = "I design and build fast, animated websites that make your brand impossible to ignore.";
+  var text = "We design and build fast, animated websites that make your brand impossible to ignore.";
   text.split(" ").forEach(function (word, i) {
     var span = document.createElement("span");
     span.className = "lp-word-reveal";
@@ -231,7 +231,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     })
       .then(function (response) {
         if (response.ok) {
-          formNote.textContent = "Thanks! Your message was sent — I'll get back to you within 24 hours.";
+          formNote.textContent = "Thanks! Your message was sent — we'll get back to you within 24 hours.";
           form.reset();
         } else {
           throw new Error("Formspree responded with " + response.status);
@@ -239,7 +239,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
       })
       .catch(function () {
         formNote.textContent =
-          "Something went wrong sending that. You can also email me directly at " + DEST_EMAIL + ".";
+          "Something went wrong sending that. You can also email us directly at " + DEST_EMAIL + ".";
       })
       .finally(function () {
         if (submitBtn) {
@@ -265,7 +265,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   var WHATSAPP_LINK =
     "https://wa.me/971547771747?text=" + encodeURIComponent("Hi Dar Web, I'd like to talk about a website.");
   var CONTACT_HTML =
-    "Best way to sort that out is to talk directly — message me on " +
+    "Best way to sort that out is to talk directly — message us on " +
     '<a href="' + WHATSAPP_LINK + '" target="_blank" rel="noopener">WhatsApp</a> or call ' +
     '<a href="tel:+971547771747">' + PHONE_DISPLAY + "</a>.";
 
