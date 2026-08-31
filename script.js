@@ -31,69 +31,14 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 (function () {
   var headline = document.getElementById("lpHeadline");
   if (!headline) return;
-  var text = "We design and build fast, animated websites that make your brand impossible to ignore.";
+  var text = "We build considered websites for ambitious brands.";
   text.split(" ").forEach(function (word, i) {
     var span = document.createElement("span");
     span.className = "lp-word-reveal";
     span.textContent = word;
-    span.style.animationDelay = (1 + i * 0.05) + "s";
+    span.style.animationDelay = (0.15 + i * 0.06) + "s";
     headline.appendChild(span);
   });
-})();
-
-/* ---------- Hero spotlight image reveal ---------- */
-(function () {
-  var canvas = document.getElementById("lpRevealCanvas");
-  var imgLayer = document.getElementById("lpRevealImg");
-  if (!canvas || !imgLayer) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  var ctx = canvas.getContext("2d");
-  var SPOTLIGHT_R = 260;
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
-
-  var mouse = { x: -999, y: -999 };
-  var smooth = { x: -999, y: -999 };
-
-  window.addEventListener("mousemove", function (e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  function loop() {
-    smooth.x += (mouse.x - smooth.x) * 0.1;
-    smooth.y += (mouse.y - smooth.y) * 0.1;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    var grad = ctx.createRadialGradient(smooth.x, smooth.y, 0, smooth.x, smooth.y, SPOTLIGHT_R);
-    grad.addColorStop(0, "rgba(255,255,255,1)");
-    grad.addColorStop(0.4, "rgba(255,255,255,1)");
-    grad.addColorStop(0.6, "rgba(255,255,255,0.75)");
-    grad.addColorStop(0.75, "rgba(255,255,255,0.4)");
-    grad.addColorStop(0.88, "rgba(255,255,255,0.12)");
-    grad.addColorStop(1, "rgba(255,255,255,0)");
-
-    ctx.beginPath();
-    ctx.arc(smooth.x, smooth.y, SPOTLIGHT_R, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    var dataUrl = canvas.toDataURL();
-    imgLayer.style.webkitMaskImage = "url(" + dataUrl + ")";
-    imgLayer.style.maskImage = "url(" + dataUrl + ")";
-    imgLayer.style.webkitMaskSize = "100% 100%";
-    imgLayer.style.maskSize = "100% 100%";
-
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
 })();
 
 /* ---------- Scroll progress bar ---------- */
@@ -108,59 +53,6 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
   document.addEventListener("scroll", update, { passive: true });
   update();
-})();
-
-/* ---------- Custom cursor ---------- */
-(function () {
-  if (window.matchMedia("(pointer: coarse)").matches) return;
-  var dot = document.getElementById("cursorDot");
-  var ring = document.getElementById("cursorRing");
-  if (!dot || !ring) return;
-
-  var mouseX = -100, mouseY = -100;
-  var ringX = -100, ringY = -100;
-
-  window.addEventListener("mousemove", function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dot.style.transform = "translate(" + mouseX + "px," + mouseY + "px) translate(-50%,-50%)";
-  });
-
-  function loop() {
-    ringX += (mouseX - ringX) * 0.18;
-    ringY += (mouseY - ringY) * 0.18;
-    ring.style.transform = "translate(" + ringX + "px," + ringY + "px) translate(-50%,-50%)";
-    requestAnimationFrame(loop);
-  }
-  loop();
-
-  document.querySelectorAll("[data-hover], a, button, .tilt-card").forEach(function (el) {
-    el.addEventListener("mouseenter", function () { ring.classList.add("is-active"); });
-    el.addEventListener("mouseleave", function () { ring.classList.remove("is-active"); });
-  });
-})();
-
-/* ---------- Tilt cards ---------- */
-(function () {
-  if (window.matchMedia("(pointer: coarse)").matches) return;
-  document.querySelectorAll(".tilt-card").forEach(function (card) {
-    var bounds;
-    card.addEventListener("mouseenter", function () {
-      bounds = card.getBoundingClientRect();
-    });
-    card.addEventListener("mousemove", function (e) {
-      if (!bounds) bounds = card.getBoundingClientRect();
-      var px = (e.clientX - bounds.left) / bounds.width - 0.5;
-      var py = (e.clientY - bounds.top) / bounds.height - 0.5;
-      var rotateY = px * 10;
-      var rotateX = -py * 10;
-      card.style.transform =
-        "perspective(800px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-4px)";
-    });
-    card.addEventListener("mouseleave", function () {
-      card.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)";
-    });
-  });
 })();
 
 /* ---------- Scroll reveal ---------- */
