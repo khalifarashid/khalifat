@@ -816,8 +816,11 @@ h1, h2, h3 { font-weight: 400; letter-spacing: -0.025em; line-height: 1.12; }
 .lp-hero-big-text { bottom: 0; opacity: 0.045; }
 .lp-hero-big-text h2 {
   color: var(--ink); font-weight: 400; letter-spacing: -0.05em;
-  font-size: clamp(90px, 20vw, 340px);
+  /* The wordmark renders ~3.61x its font-size wide, so 20vw keeps it
+     at ~72% of the viewport at every width, phones included. */
+  font-size: clamp(64px, 20vw, 340px);
 }
+.lp-hero-big-text { padding: 0 16px; }
 
 /* Buttons — square, ink, no fills ---------------------------- */
 .lp-cta-btn {
