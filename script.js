@@ -263,7 +263,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   var PHONE_DISPLAY = "+971 54 777 1747";
   var WHATSAPP_LINK =
-    "https://wa.me/971547771747?text=" + encodeURIComponent("Hi Khalifa, I'd like to talk about a website.");
+    "https://wa.me/971547771747?text=" + encodeURIComponent("Hi Dar Web, I'd like to talk about a website.");
   var CONTACT_HTML =
     "Best way to sort that out is to talk directly — message me on " +
     '<a href="' + WHATSAPP_LINK + '" target="_blank" rel="noopener">WhatsApp</a> or call ' +
@@ -320,7 +320,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     },
     {
       keywords: ["hi", "hello", "hey", "salam", "yo"],
-      answer: "Hey! I'm Khalifa's site assistant — ask me about pricing, timelines, or what's included in each package."
+      answer: "Hey! I'm the Dar Web site assistant — ask me about pricing, timelines, or what's included in each package."
     },
     {
       keywords: ["contact", "talk", "call", "whatsapp", "phone", "reach", "hire", "email", "number", "human", "real person"],
@@ -375,7 +375,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     if (!greeted) {
       greeted = true;
       addMessage(
-        "Hi, I'm Khalifa's assistant. Ask me anything about building a website — pricing, timelines, what's included — " +
+        "Hi, I'm the Dar Web assistant. Ask me anything about building a website — pricing, timelines, what's included — " +
           "or use a quick question below.",
         "bot"
       );
