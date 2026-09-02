@@ -1,0 +1,21 @@
+{
+  "name": "craftbyte-reel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "remotion render src/index.ts CraftbyteReel out/craftbyte-reel.mp4 --codec h264 --crf 16",
+    "studio": "remotion studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.520",
+    "@remotion/google-fonts": "^4.0.520",
+    "@remotion/motion-blur": "^4.0.520",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remotion": "^4.0.520"
+  }
+}
