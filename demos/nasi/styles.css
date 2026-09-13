@@ -745,8 +745,9 @@ button, input, select { font: inherit; color: inherit; }
 }
 
 /* --------------------------------------------------------------- reveal */
-[data-rise] { opacity: 0; transform: translateY(26px); }
-[data-rise].is-in {
+/* Progressive enhancement: content is visible unless JS is running the reveal. */
+.js [data-rise] { opacity: 0; transform: translateY(26px); }
+.js [data-rise].is-in {
   opacity: 1;
   transform: none;
   transition: opacity 0.6s var(--ease-out), transform 0.7s var(--ease-pop);

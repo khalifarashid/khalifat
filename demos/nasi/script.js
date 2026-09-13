@@ -7,6 +7,8 @@
   'use strict';
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  if (!reduceMotion) { root.classList.add('js'); }
 
   /* ---------------------------------------------------------- reveal */
   var risers = Array.prototype.slice.call(document.querySelectorAll('[data-rise]'));
@@ -31,6 +33,12 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     risers.forEach(function (el) { revealObserver.observe(el); });
+
+    /* Safety net: if observers never fire (a screenshot pass, a stalled tab),
+       nothing stays invisible. */
+    window.setTimeout(function () {
+      risers.forEach(function (el) { el.classList.add('is-in'); });
+    }, 2500);
 
     var hero = document.querySelector('.hero');
     if (hero) {
