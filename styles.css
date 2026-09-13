@@ -431,6 +431,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
   justify-content: space-between;
   flex-direction: column;
 }
+.thumb-nasi {
+  background: linear-gradient(155deg, #3b332a, #1a1613);
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
 .demo-brand {
   position: relative;
   z-index: 1;
@@ -946,6 +952,7 @@ select:focus-visible, textarea:focus-visible {
 .thumb-meridian { background: linear-gradient(155deg, #232c36, #12171c); }
 .thumb-vantage  { background: linear-gradient(155deg, #2c2a26, #121110); }
 .thumb-pulse    { background: linear-gradient(155deg, #4a4038, #221d19); }
+.thumb-nasi     { background: linear-gradient(155deg, #3b332a, #1a1613); }
 .work-thumb-tag {
   border-radius: var(--radius); background: rgba(250, 249, 246, 0.12);
   color: #faf9f6; font-size: 0.62rem; letter-spacing: 0.14em;
