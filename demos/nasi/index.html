@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NASI - Screen-Free Activity Boxes for Kids (Demo)</title>
+<meta name="description" content="Demo concept site for NASI, a UAE activity-box subscription that gets kids off screens and into hands-on play.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Baloo+Bhaijaan+2:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body id="top">
+
+<a class="demo-tag" href="../../index.html#work">Back to Craftbyte portfolio · demo concept, not an official NASI site</a>
+
+<!-- decorative doodle field, sits behind everything -->
+<div class="doodles" aria-hidden="true">
+  <span class="doodle d1"></span><span class="doodle d2"></span><span class="doodle d3"></span>
+  <span class="doodle d4"></span><span class="doodle d5"></span><span class="doodle d6"></span>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo" aria-label="NASI home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" role="presentation">
+          <rect x="3" y="14" width="34" height="23" rx="6" fill="var(--sun)"/>
+          <path d="M3 20h34" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" opacity=".25"/>
+          <path d="M8 14 20 4l12 10Z" fill="var(--coral)"/>
+          <circle cx="20" cy="26" r="4.4" fill="var(--ink)"/>
+          <circle cx="21.6" cy="24.6" r="1.5" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="logo-word">NASI</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#inside">Inside the box</a>
+      <a href="#ages">Ages</a>
+      <a href="#roots">Roots</a>
+      <a href="#plans">Plans</a>
+    </nav>
+    <a href="#join" class="btn btn-primary btn-sm nav-cta">Start a box</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="#inside">Inside the box</a>
+    <a href="#ages">Ages</a>
+    <a href="#roots">Roots</a>
+    <a href="#plans">Plans</a>
+    <a href="#join" class="btn btn-primary">Start a box</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="pill" data-rise>Ages 2 to 11</p>
+        <h1 data-rise>
+          Big adventures,
+          <span class="squiggle-word">zero screens<svg class="squiggle" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9c34-8 62 4 96-1s58-7 118 2" fill="none" stroke="var(--coral)" stroke-width="6" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="hero-sub" data-rise>A box of hands-on activities, stories and Emirati culture lands on your child's table every month.</p>
+        <div class="hero-cta" data-rise>
+          <a href="#join" class="btn btn-primary btn-lg" data-confetti>Start a box</a>
+          <a href="#inside" class="btn btn-ghost btn-lg">Peek inside</a>
+        </div>
+      </div>
+
+      <div class="hero-art" data-rise>
+        <div class="box-scene" id="boxScene">
+          <svg viewBox="0 0 420 380" role="img" aria-label="An open activity box with craft supplies, a storybook and paper stars popping out of it">
+            <defs>
+              <linearGradient id="boxFront" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="var(--sun)"/><stop offset="1" stop-color="var(--sun-deep)"/>
+              </linearGradient>
+            </defs>
+
+            <!-- back glow -->
+            <circle class="art-glow" cx="210" cy="196" r="152" fill="var(--sky-soft)"/>
+
+            <!-- lid, floating clear of the box -->
+            <g class="box-lid">
+              <path d="M120 118 210 78l90 40-90 40Z" fill="var(--coral)"/>
+              <path d="M120 118v15l90 40v-15Z" fill="var(--coral-deep)"/>
+              <path d="M300 118v15l-90 40v-15Z" fill="var(--coral-deep)" opacity=".72"/>
+            </g>
+
+            <!-- things flying out of the box -->
+            <g class="pop pop-1">
+              <g transform="rotate(-14 137 154)">
+                <rect x="106" y="114" width="62" height="80" rx="9" fill="var(--sky)"/>
+                <rect x="118" y="132" width="38" height="7" rx="3.5" fill="#fff" opacity=".8"/>
+                <rect x="118" y="148" width="28" height="7" rx="3.5" fill="#fff" opacity=".6"/>
+                <rect x="118" y="164" width="34" height="7" rx="3.5" fill="#fff" opacity=".45"/>
+              </g>
+            </g>
+            <g class="pop pop-2">
+              <path d="M300 108l12 25 27 4-19 19 4 27-24-13-24 13 4-27-19-19 27-4Z" fill="var(--sun)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+            </g>
+            <g class="pop pop-3">
+              <g transform="rotate(18 250 158)">
+                <rect x="241" y="126" width="18" height="66" rx="9" fill="var(--palm)"/>
+                <path d="M241 130l9-18 9 18Z" fill="var(--ink)"/>
+              </g>
+            </g>
+            <g class="pop pop-4">
+              <path d="M150 74l68 24-30 12Z" fill="#fff" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M150 74l38 36-2-24Z" fill="#fff" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+            </g>
+
+            <!-- box body -->
+            <path d="M96 186h228v112a16 16 0 0 1-16 16H112a16 16 0 0 1-16-16Z" fill="url(#boxFront)"/>
+            <path d="M96 186h228v20H96Z" fill="var(--ink)" opacity=".14"/>
+            <text x="210" y="272" text-anchor="middle" class="box-word">NASI</text>
+
+            <!-- confetti -->
+            <g class="confetti-art">
+              <circle cx="80" cy="96" r="7" fill="var(--berry)"/>
+              <circle cx="352" cy="86" r="9" fill="var(--sky)"/>
+              <rect x="60" y="220" width="14" height="14" rx="4" fill="var(--palm)" transform="rotate(24 67 227)"/>
+              <rect x="348" y="228" width="14" height="14" rx="4" fill="var(--coral)" transform="rotate(-18 355 235)"/>
+              <circle cx="330" cy="330" r="6" fill="var(--sun)"/>
+              <circle cx="74" cy="316" r="8" fill="var(--sky)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STICKER MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>screen free</span><span class="mq-star"></span>
+      <span>hands on</span><span class="mq-star"></span>
+      <span>arabic and english</span><span class="mq-star"></span>
+      <span>made for UAE families</span><span class="mq-star"></span>
+      <span>zero prep for parents</span><span class="mq-star"></span>
+      <span>screen free</span><span class="mq-star"></span>
+      <span>hands on</span><span class="mq-star"></span>
+      <span>arabic and english</span><span class="mq-star"></span>
+      <span>made for UAE families</span><span class="mq-star"></span>
+      <span>zero prep for parents</span><span class="mq-star"></span>
+    </div>
+  </div>
+  <p class="sr-only">NASI boxes are screen free, hands on, bilingual in Arabic and English, made for UAE families, and need no prep from parents.</p>
+
+  <!-- ============ INSIDE THE BOX (bento) ============ -->
+  <section class="section" id="inside">
+    <div class="wrap">
+      <div class="sec-head" data-rise>
+        <h2>Open it and the afternoon sorts itself out</h2>
+        <p>Five things in every box. Everything is cut, counted and ready, so nobody has to hunt for glue at 4pm.</p>
+      </div>
+
+      <div class="bento">
+        <article class="cell cell-make tint-coral" data-rise>
+          <span class="cell-art" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><rect x="14" y="40" width="92" height="46" rx="10" fill="#fff" opacity=".92"/><path d="M28 40 60 14l32 26Z" fill="var(--ink)" opacity=".82"/><circle cx="46" cy="62" r="8" fill="var(--sun)"/><circle cx="72" cy="62" r="8" fill="var(--sky)"/><rect x="34" y="76" width="52" height="6" rx="3" fill="var(--ink)" opacity=".2"/></svg>
+          </span>
+          <h3>A make-it kit</h3>
+          <p>One proper build per box. A pinhole camera, a marble run, a rain gauge. Real materials, no printouts.</p>
+        </article>
+
+        <article class="cell cell-story tint-sky" data-rise>
+          <span class="cell-art" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M16 22h40a8 8 0 0 1 8 8v54a8 8 0 0 0-8-8H16Z" fill="#fff" opacity=".95"/><path d="M104 22H64a8 8 0 0 0-8 8v54a8 8 0 0 1 8-8h40Z" fill="#fff" opacity=".75"/><path d="M60 30v54" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity=".55"/><rect x="24" y="38" width="26" height="5" rx="2.5" fill="var(--ink)" opacity=".25"/><rect x="24" y="50" width="20" height="5" rx="2.5" fill="var(--ink)" opacity=".18"/></svg>
+          </span>
+          <h3>A story worth reading twice</h3>
+          <p>An original short story with a UAE setting, printed in Arabic on one page and English on the other.</p>
+        </article>
+
+        <article class="cell cell-words tint-palm" data-rise>
+          <span class="cell-art" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><rect x="18" y="26" width="46" height="58" rx="8" fill="#fff" opacity=".9" transform="rotate(-8 41 55)"/><rect x="56" y="20" width="46" height="58" rx="8" fill="#fff" transform="rotate(7 79 49)"/><text x="79" y="58" text-anchor="middle" class="card-glyph" transform="rotate(7 79 49)">ب</text></svg>
+          </span>
+          <h3>Word cards</h3>
+          <p>Ten Arabic words a month, on cards chunky enough for small hands and a fridge magnet.</p>
+        </article>
+
+        <article class="cell cell-mess tint-berry" data-rise>
+          <span class="cell-art" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M48 18h24v26l18 34a10 10 0 0 1-9 15H39a10 10 0 0 1-9-15l18-34Z" fill="#fff" opacity=".92"/><path d="M37 64h46l7 14a10 10 0 0 1-9 15H39a10 10 0 0 1-9-15Z" fill="var(--sky)"/><circle cx="52" cy="80" r="4" fill="#fff"/><circle cx="68" cy="76" r="3" fill="#fff"/></svg>
+          </span>
+          <h3>One good mess</h3>
+          <p>A science experiment that fizzes, grows or changes colour. Wipeable mat included, because we have met children.</p>
+        </article>
+
+        <article class="cell cell-chart tint-sun" data-rise>
+          <span class="cell-art" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><rect x="20" y="16" width="80" height="68" rx="10" fill="#fff" opacity=".95"/><path d="M32 40h56M32 54h56M32 68h34" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity=".18"/><path d="M74 62l7 7 14-16" fill="none" stroke="var(--palm)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Stickers and a wall chart</h3>
+          <p>Finish an activity, earn a sticker. The chart is the reason the box gets opened on day two.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGES (interactive tabs) ============ -->
+  <section class="section section-tint" id="ages">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-rise>
+        <p class="eyebrow">Pick your explorer</p>
+        <h2>Every box is built for one age, not for everyone</h2>
+      </div>
+
+      <div class="ages" data-rise>
+        <div class="age-tabs" role="tablist" aria-label="Choose an age group">
+          <button class="age-tab is-active" role="tab" id="tab-little" aria-selected="true" aria-controls="panel-little" data-age="little">
+            <span class="age-num">2 to 4</span><span class="age-name">Little hands</span>
+          </button>
+          <button class="age-tab" role="tab" id="tab-maker" aria-selected="false" aria-controls="panel-maker" data-age="maker" tabindex="-1">
+            <span class="age-num">5 to 7</span><span class="age-name">Makers</span>
+          </button>
+          <button class="age-tab" role="tab" id="tab-inventor" aria-selected="false" aria-controls="panel-inventor" data-age="inventor" tabindex="-1">
+            <span class="age-num">8 to 11</span><span class="age-name">Inventors</span>
+          </button>
+        </div>
+
+        <div class="age-panels">
+          <div class="age-panel is-active" role="tabpanel" id="panel-little" aria-labelledby="tab-little">
+            <div class="age-visual tint-sun">
+              <svg viewBox="0 0 200 200" role="presentation" aria-hidden="true"><circle cx="100" cy="100" r="66" fill="var(--card)" opacity=".6"/><rect x="52" y="92" width="42" height="42" rx="10" fill="var(--coral)" transform="rotate(-10 73 113)"/><circle cx="128" cy="84" r="24" fill="var(--sky)"/><path d="M96 148h74" stroke="var(--ink)" stroke-width="8" stroke-linecap="round" opacity=".2"/><path d="M118 132l14-24 14 24Z" fill="var(--palm)"/></svg>
+            </div>
+            <div class="age-body">
+              <h3>Little hands</h3>
+              <p>Chunky, chewable-safe, forgiving. The point is grip, colour and naming things out loud.</p>
+              <ul class="ticks">
+                <li>Peel-and-stick shape collage</li>
+                <li>Five first Arabic words, one per card</li>
+                <li>A two-minute bedtime story</li>
+                <li>Water-play scoop and float set</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="age-panel" role="tabpanel" id="panel-maker" aria-labelledby="tab-maker" hidden>
+            <div class="age-visual tint-sky">
+              <svg viewBox="0 0 200 200" role="presentation" aria-hidden="true"><circle cx="100" cy="100" r="66" fill="var(--card)" opacity=".6"/><rect x="56" y="70" width="88" height="60" rx="10" fill="var(--sun)"/><path d="M56 96h88" stroke="var(--ink)" stroke-width="5" opacity=".25"/><circle cx="76" cy="146" r="14" fill="var(--ink)" opacity=".8"/><circle cx="128" cy="146" r="14" fill="var(--ink)" opacity=".8"/><path d="M100 70V48l22-8" fill="none" stroke="var(--coral)" stroke-width="8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="age-body">
+              <h3>Makers</h3>
+              <p>Scissors allowed. Boxes at this age end with something that rolls, floats or makes a noise.</p>
+              <ul class="ticks">
+                <li>Build a rubber-band racer</li>
+                <li>Ten Arabic words with a matching game</li>
+                <li>Comic strip to finish and colour</li>
+                <li>Grow-your-own desert seed pot</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="age-panel" role="tabpanel" id="panel-inventor" aria-labelledby="tab-inventor" hidden>
+            <div class="age-visual tint-palm">
+              <svg viewBox="0 0 200 200" role="presentation" aria-hidden="true"><circle cx="100" cy="100" r="66" fill="var(--card)" opacity=".6"/><circle cx="92" cy="92" r="34" fill="none" stroke="var(--ink)" stroke-width="9" opacity=".8"/><path d="M118 118l30 30" stroke="var(--ink)" stroke-width="12" stroke-linecap="round" opacity=".8"/><circle cx="92" cy="92" r="22" fill="var(--sky)" opacity=".7"/><path d="M150 58l6 12 12 6-12 6-6 12-6-12-12-6 12-6Z" fill="var(--sun)"/></svg>
+            </div>
+            <div class="age-body">
+              <h3>Inventors</h3>
+              <p>Longer projects that run over several days, with a challenge card they can actually fail at first.</p>
+              <ul class="ticks">
+                <li>Circuit kit with a working buzzer</li>
+                <li>Pearl-diving history and a map to plot</li>
+                <li>Arabic reading passage with a puzzle</li>
+                <li>Weekly build challenge, no instructions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROOTS ============ -->
+  <section class="section" id="roots">
+    <div class="wrap roots-grid">
+      <div class="roots-art" data-rise>
+        <svg viewBox="0 0 400 340" role="img" aria-label="Illustration of a dhow sailing past dunes under a big sun and stars">
+          <circle cx="286" cy="96" r="58" fill="var(--sun)"/>
+          <path d="M0 214c62-30 108 14 168-10s96-44 232-6v142H0Z" fill="var(--sand)"/>
+          <path d="M0 258c78-26 128 18 200-4s124-30 200-4v90H0Z" fill="var(--sand-deep)"/>
+          <path d="M196 234V96l86 138Z" fill="#fff"/>
+          <path d="M186 234V140l-56 94Z" fill="#fff" opacity=".8"/>
+          <path d="M96 234h216l-26 34a18 18 0 0 1-14 7H136a18 18 0 0 1-14-7Z" fill="var(--ink)"/>
+          <g fill="var(--ink)" opacity=".55">
+            <path d="M62 62l5 11 11 5-11 5-5 11-5-11-11-5 11-5Z"/>
+            <path d="M132 34l4 8 8 4-8 4-4 8-4-8-8-4 8-4Z"/>
+            <path d="M348 190l4 8 8 4-8 4-4 8-4-8-8-4 8-4Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="roots-copy" data-rise>
+        <h2>Growing up here should feel like something</h2>
+        <p>Every box carries one piece of this place. A pearl diver's knot to tie, a falcon to fold, a majlis story about a grandmother who beat everyone at cards. Arabic sits next to English on the page, so a child who speaks one starts recognising the other without being tested on it.</p>
+        <div class="roots-strip">
+          <div class="roots-stat"><strong>12</strong><span>heritage stories a year</span></div>
+          <div class="roots-stat"><strong>120</strong><span>Arabic words on cards</span></div>
+          <div class="roots-stat"><strong lang="ar" class="ar">فضول</strong><span>curiosity, this month's word</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITY RANDOMISER ============ -->
+  <section class="section spinner-band">
+    <div class="wrap spinner-inner">
+      <div class="spinner-copy" data-rise>
+        <h2>Bored kid, right now, nothing prepared?</h2>
+        <p>Press the button. You get one activity that uses things you already have at home.</p>
+        <button class="btn btn-primary btn-lg" id="spinBtn" type="button">Give me one</button>
+      </div>
+
+      <div class="spinner-card" data-rise>
+        <div class="ticket" id="ticket" aria-live="polite">
+          <div class="ticket-empty" id="ticketEmpty">
+            <span class="ticket-face" aria-hidden="true">
+              <svg viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="var(--sun)"/><circle cx="33" cy="38" r="5" fill="var(--ink)"/><circle cx="57" cy="38" r="5" fill="var(--ink)"/><path d="M31 58c8 8 20 8 28 0" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/></svg>
+            </span>
+            <p>Nothing picked yet. Hit the button and something silly comes out.</p>
+          </div>
+          <div class="ticket-result" id="ticketResult" hidden>
+            <p class="ticket-meta" id="ticketMeta"></p>
+            <h3 id="ticketTitle"></h3>
+            <p class="ticket-body" id="ticketBody"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head" data-rise>
+        <h2>Three things happen, then you stop thinking about it</h2>
+      </div>
+      <ol class="path">
+        <svg class="path-line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M60 78C230 8 340 108 500 60s280-70 440 12" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 16" opacity=".3"/>
+        </svg>
+        <li data-rise>
+          <span class="path-dot tint-coral" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="17" r="9" fill="#fff"/><path d="M8 42c2-10 8-15 16-15s14 5 16 15Z" fill="#fff"/></svg>
+          </span>
+          <h3>Tell us about your kid</h3>
+          <p>Age, language at home, and whether they would rather build a robot or bake something.</p>
+        </li>
+        <li data-rise>
+          <span class="path-dot tint-sky" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="7" y="18" width="34" height="22" rx="5" fill="#fff"/><path d="M12 18 24 8l12 10Z" fill="#fff" opacity=".8"/><rect x="20" y="24" width="8" height="16" rx="3" fill="var(--sky)"/></svg>
+          </span>
+          <h3>A box lands at your door</h3>
+          <p>Free delivery across the UAE, always before the weekend. Pause or skip a month whenever.</p>
+        </li>
+        <li data-rise>
+          <span class="path-dot tint-palm" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 40S8 30 8 19a9 9 0 0 1 16-5 9 9 0 0 1 16 5c0 11-16 21-16 21Z" fill="#fff"/></svg>
+          </span>
+          <h3>They open it without being asked</h3>
+          <p>That is the whole product. The tablet stays face down on the counter for an afternoon.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PARENTS ============ -->
+  <section class="section section-tint">
+    <div class="wrap">
+      <div class="sec-head" data-rise>
+        <p class="eyebrow">From parents</p>
+        <h2>What actually happens at the kitchen table</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote q-tall" data-rise>
+          <blockquote>The marble run took two hours and he did not ask for the iPad once. That has never happened.</blockquote>
+          <figcaption><span class="q-name">Mariam Al Hosani</span><span class="q-role">Mother of two, Abu Dhabi</span></figcaption>
+        </figure>
+        <figure class="quote" data-rise>
+          <blockquote>My daughter reads the Arabic side to her grandmother on video calls now. That was worth the subscription on its own.</blockquote>
+          <figcaption><span class="q-name">Hessa Al Marri</span><span class="q-role">Parent, Sharjah</span></figcaption>
+        </figure>
+        <figure class="quote" data-rise>
+          <blockquote>I stopped buying random craft kits that sit in a cupboard. One box, everything cut, nothing missing.</blockquote>
+          <figcaption><span class="q-name">Priya Menon</span><span class="q-role">Parent, Dubai Marina</span></figcaption>
+        </figure>
+        <figure class="quote q-wide" data-rise>
+          <blockquote>We use it in our reception class on Thursdays. Twenty five children, one box, no chaos.</blockquote>
+          <figcaption><span class="q-name">Laura Whitfield</span><span class="q-role">Early years teacher, Al Ain</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLANS ============ -->
+  <section class="section" id="plans">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-rise>
+        <h2>One child, one box, one price</h2>
+        <p>Prices are per child, per month, delivery included. Cancel from the account page in two taps.</p>
+      </div>
+
+      <div class="plans">
+        <article class="plan" data-rise>
+          <h3>Month to month</h3>
+          <p class="plan-price"><span class="cur">AED</span><span class="amt">149</span></p>
+          <p class="plan-note">Rolling, cancel any time</p>
+          <ul class="ticks">
+            <li>One box a month</li>
+            <li>Free UAE delivery</li>
+            <li>Swap the theme once</li>
+          </ul>
+          <a href="#join" class="btn btn-ghost">Start a box</a>
+        </article>
+
+        <article class="plan plan-hero" data-rise>
+          <span class="plan-flag">Most families pick this</span>
+          <h3>Six months</h3>
+          <p class="plan-price"><span class="cur">AED</span><span class="amt">129</span></p>
+          <p class="plan-note">Billed every six months</p>
+          <ul class="ticks">
+            <li>Everything in month to month</li>
+            <li>A birthday box in your child's month</li>
+            <li>Wall chart and sticker album</li>
+            <li>Pause up to two months</li>
+          </ul>
+          <a href="#join" class="btn btn-primary" data-confetti>Start a box</a>
+        </article>
+
+        <article class="plan" data-rise>
+          <h3>Classroom</h3>
+          <p class="plan-price"><span class="cur">AED</span><span class="amt">640</span></p>
+          <p class="plan-note">Per class of twenty five</p>
+          <ul class="ticks">
+            <li>Group set with spare parts</li>
+            <li>Lesson notes for the teacher</li>
+            <li>Termly invoicing</li>
+          </ul>
+          <a href="#join" class="btn btn-ghost">Start a box</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section-tint">
+    <div class="wrap wrap-narrow">
+      <div class="sec-head" data-rise>
+        <h2>Things parents ask first</h2>
+      </div>
+      <div class="faq" data-rise>
+        <details>
+          <summary>How much of this do I have to do with them?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Two of the five activities are built for a child to do alone. The make-it kit is nicer with an adult, but the instructions are drawn, not written, so a seven year old can follow them.</p>
+        </details>
+        <details>
+          <summary>My child speaks no Arabic. Is that a problem?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>No. Everything is written in both languages and the word cards start from zero. Plenty of our families speak Tagalog, Malayalam or Russian at home.</p>
+        </details>
+        <details>
+          <summary>What if the box is wrong for my child?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>Tell us within a week and the next one is adjusted, or refunded. You keep the box either way, we are not asking anyone to repack glue.</p>
+        </details>
+        <details>
+          <summary>Where do you deliver?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <p>All seven emirates, free. Deliveries land Tuesday to Thursday so the box is there before the weekend.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOIN ============ -->
+  <section class="section join" id="join">
+    <div class="wrap wrap-narrow">
+      <div class="join-card" data-rise>
+        <h2>Start a box</h2>
+        <p class="join-sub">Tell us the age and we will send the first box next week.</p>
+
+        <form class="form" id="joinForm" novalidate>
+          <div class="field">
+            <label for="parentName">Your name</label>
+            <input type="text" id="parentName" name="parentName" autocomplete="name" placeholder="Mariam Al Hosani">
+            <p class="err" data-err-for="parentName" hidden></p>
+          </div>
+          <div class="field">
+            <label for="parentEmail">Email</label>
+            <input type="email" id="parentEmail" name="parentEmail" autocomplete="email" placeholder="you@example.com">
+            <p class="hint">We send one email a month, the week before the box ships.</p>
+            <p class="err" data-err-for="parentEmail" hidden></p>
+          </div>
+          <div class="field">
+            <label for="childAge">Child's age</label>
+            <select id="childAge" name="childAge">
+              <option value="">Choose an age group</option>
+              <option value="2-4">2 to 4, little hands</option>
+              <option value="5-7">5 to 7, makers</option>
+              <option value="8-11">8 to 11, inventors</option>
+            </select>
+            <p class="err" data-err-for="childAge" hidden></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg form-submit" id="joinSubmit">Start a box</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="join-done" id="joinDone" hidden>
+          <span class="join-tick" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="var(--palm)"/><path d="M19 33l9 10 18-21" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>You are on the list</h3>
+          <p id="joinDoneMsg"></p>
+          <button type="button" class="btn btn-ghost btn-sm" id="joinReset">Add another child</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="logo-word">NASI</span>
+      <p>Screen-free activity boxes for children in the UAE.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#inside">Inside the box</a>
+      <a href="#ages">Ages</a>
+      <a href="#roots">Roots</a>
+      <a href="#plans">Plans</a>
+      <a href="https://www.instagram.com/nasi.ae" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="footer-note">Concept demo built by Craftbyte. Not affiliated with NASI.</p>
+  </div>
+</footer>
+
+<div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
